@@ -1,0 +1,169 @@
+node -v    checking node version
+
+npm -v checking npm version
+
+npm install -g @angular/cli installing angular cli
+
+ng v checking the angular version
+
+npm install -g @angular/cli@v.v installing angular cli at specific version
+
+ng build build angular project
+
+ng serve serving the angular project locally
+
+ng test run test files 
+
+ng new app-name create new angular app
+
+ng new app-name --defaults(skip default prompts)  --skip-install(will skip npm install process
+
+
+===========================================================================
+Genarating angular app commands:
+
+1. ng new  my-app
+ng -> angular cli itself
+new --> action that took by cli
+my-app --> app name
+
+2. ng new  my-app --dry-run
+-dry-run --> don't write the files , but report them
+will just report them but will not create them
+also skip install
+
+3. ng new  my-app --skip-install
+-- will skip the npm install command
+
+4. ng new  my-app --defaults 
+-- will skip basic prompts asked at time of creating setup the defaults
+
+5. ng new --help
+-- will report all options what they will do
+
+6. ng new app --prefix bot
+-- changes default prefix app to bot
+
+7. ng new app -s -t 
+-- inline style and inline template
+-- will not create html and css file only ts file
+
+8. ng new app -S or --skip-test 
+-- will skip the test files and unit testing part
+
+9. ng new my-app --style scss --routing --strict -d
+-- will set the style ,routing and strict mode 
+
+10. ng new my-app --skip-git
+-- will skip git addition in project file
+==========================================================================
+serving the angular application
+
+1. ng serve 
+-- willserve the application 
+
+2. ng serve -o
+-- will serve and open the application
+
+===========================================================================
+Configuring the angular CLI
+
+1. ng config 
+-- used to config the properties in angular.json file based on company standards
+
+===========================================================================
+Linting
+
+
+1. ng lint my-app
+ --> will lint the project
+
+2. ng lint my-app --format stylish
+--> lint and format the output
+
+3. ng lint my-app --fix
+--> will attempt to fix all problems
+
+currntly using ts lint to eslint
+
+==========================================================================
+Generating Code from the Blueprints
+
+Components
+
+1. ng g c name
+-- generate the new component with all the files 
+
+2. ng g c name --flat
+-- will generate the component without folder
+
+3. --inline-template or -t
+-- will create inline template bot create css or html file
+
+4. --inline-style or -s
+-- will create inline style
+
+5. --spec false
+ -- will stop generating the spec file
+
+6. --view-encapsulation  or -v
+-- will enable view encapsulation technology
+
+7. -change-detection
+-- change detection strategy
+-- setting up the change detection strategy
+
+8. --dry-run or -d
+-- will just report file not create it
+
+
+===========================================================================
+Generating directives 
+
+1. ng g d --dry-run or ng generate directive 
+ -- will report the directive files but will not create it 
+
+Generating services
+
+1. ng g s service-1 -d 
+
+-- will generate the services
+
+Generating classes,enums and interfaces
+
+1. ng g cl models/customers 
+
+ -- will create class inside the models folder
+
+2. ng g i interfaces/customers 
+
+ -- will create interface inside the interfaces folder
+
+3. ng g enum enums/weeks 
+
+ -- will create enum inside the enums folder
+
+Genrating the pipes
+
+1. ng g pipe inital-cap
+-- will generate the pipe
+
+2. ng g pipe shared/capital
+-- will generate into the shared
+
+3. ng g pipe --module app.module
+-- will import into the app module 
+
+=========================================================================
+Generating ng modules
+
+1. ng g module login
+-- will create dedicated module file alone inside the new folder 
+
+2. ng g c --module login.module
+-- will import the new component into login module
+
+=========================================================================
+Generating the Routing Features
+
+
