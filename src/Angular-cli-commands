@@ -167,3 +167,98 @@ Generating ng modules
 Generating the Routing Features
 
 
+ng g module name --routing
+ -- will create module along with routing mechanism
+
+
+routing guards
+
+ng g guard auth will pro
+
+==========================================================================
+
+Building and Serving
+
+build are used to compile our application and it is distributed out to the folder
+
+all builds use bundling
+
+prod build needs uglification and tree shaking
+
+
+files in the build 
+
+runtime.js --> web pack run time will load all the modules together
+
+main.js ----> app code
+
+polyfills --> platform polyfills
+
+styles --> contains all th styles 
+
+vendor.js --> angular and other vendor files
+
+Exploring the sources in the output
+
+npm install webpack-bundle-analyzer --save-dev
+ng build --stats-json
+npx webpack-bundle-analyzer dist/my-apps/stats.json
+
+source-map
+npm install source-map-explorer --save-dev
+ng build --configuration production --source-map
+npx source-map-explorer .\dist\my-dream-app\main.c74ce7119f2b6010.js
+
+=======================================================================
+Build tagets and environments
+
+
+dev build
+
+1. environment.ts
+2. cache-busting --> onl images refered in css
+3. source maps --> generate
+4. extracted css --> global css to js file
+5. uglification --> no
+6. tree-shaking --> no
+7. AOT --> no
+8. Bundling --> yes
+
+prod build
+
+1. environment.prod.ts
+2. cache-busting --> all build files
+3. source maps --> not generated 
+4. extracted css --> all css files
+5. uglification --> yes
+6. tree-shaking --> yes
+7. AOT --> yes
+8. Bundling --> yes
+
+
+basic options with prod build 
+
+--source-map
+--aot
+--watch
+--prod
+
+
+=================================================================
+build and Serving the app
+
+ng serve --help
+ng serve -o open in the browser
+
+ng serve --port=2340 to change port
+
+ng serve --live-reload enable or disable
+
+ng serve --ssl serve using https
+
+ng serve --proxy-config  proxy config file
+
+=========================================================================
+Adding new packages 
+
+ng add package-name
