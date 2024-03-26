@@ -262,3 +262,96 @@ ng serve --proxy-config  proxy config file
 Adding new packages 
 
 ng add package-name
+
+we also have  schematics that are pre built templates from packages 
+that can be used to generate the components
+
+==================================================================
+Adding Scripts
+
+adding those in respective of angular.json file
+
+==================================================================
+
+Running Test files (using karma)
+
+Testing in angular
+1. Unit tests
+
+ng test --help
+
+
+ options in testing
+
+ng test --code-coverage genrates code coverage ny default it is off
+will generate file into coverage/karma.conf.js
+
+ng test --progress log progress to console
+
+--sourcemaps
+
+--watch will see for file changes and update the test via karma
+
+=================================================================
+
+End to End test (using protractor)
+
+ng e2e
+
+
+==================================================================
+Angular Tooling Features
+
+Updating-Angular
+
+
+ ng update
+ - will update the angular version to latest
+
+options 
+--migrate-only 
+- will migrate not install the new
+
+--force 
+- will ignore peer dependency matches
+
+--all
+- will update all the packages 
+
+always use the fresh branch
+use angular.update.io to get the guide
+
+============================================================
+Multiple projects
+
+ng generate app new-name
+- will create new project inside projects folder 
+
+to build particular project
+
+ng build projname
+- will build the particular project
+
+can create customized commands in package.json to build or serve all projects at a time
+
+=========================================================================
+generating new angular library
+
+ng g library lib-name
+-- need to create and build the library first
+ng build lib-name
+
+will import it from the dist which is referenced in tsconfig of shared project
+
+To create any components or schematics need to mention --project proj-name
+
+1. export it in to public api
+2. import all in main module 
+3. build library for every changes
+4. import the module in main project
+=========================================================================
+
+Angular Console
+
+
+

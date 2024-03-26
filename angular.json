@@ -104,6 +104,148 @@
           }
         }
       }
+    },
+    "home-project": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/home-project",
+      "sourceRoot": "projects/home-project/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/home-project",
+            "index": "projects/home-project/src/index.html",
+            "main": "projects/home-project/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/home-project/tsconfig.app.json",
+            "assets": [
+              "projects/home-project/src/favicon.ico",
+              "projects/home-project/src/assets"
+            ],
+            "styles": [
+              "projects/home-project/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "home-project:build:production"
+            },
+            "development": {
+              "browserTarget": "home-project:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "home-project:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/home-project/tsconfig.spec.json",
+            "assets": [
+              "projects/home-project/src/favicon.ico",
+              "projects/home-project/src/assets"
+            ],
+            "styles": [
+              "projects/home-project/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/home-project/**/*.ts",
+              "projects/home-project/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "logger": {
+      "projectType": "library",
+      "root": "projects/logger",
+      "sourceRoot": "projects/logger/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/logger/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/logger/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/logger/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/logger/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/logger/**/*.ts",
+              "projects/logger/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
